@@ -65,17 +65,3 @@ def run_crew():
     result = app_crew.kickoff()
     # print(result)
     return result
-
-
-# def run_crew2(topic: str):
-#     """Function to run the crew agent."""
-#     load_dotenv()
-#     anthropic_api_key = os.getenv("ANTHROPIC_API_KEY")
-#     openai_api_key = os.getenv("OPENAI_API_KEY")
-#     serper_api_key = os.getenv("SERPER_DEV_API_KEY")
-#     # print("Anthropic API Key:", anthropic_api_key)
-#     # print("OpenAI API Key:", openai_api_key)
-#     # print("Serper Dev API Key:", serper_api_key)
-#     result = app_crew.kickoff(inputs={"topic": topic})
-#     # print(result)
-#     return result

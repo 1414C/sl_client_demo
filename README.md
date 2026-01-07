@@ -31,6 +31,31 @@ the sample pdf (data/RBH_J1_AAAI10.pdf) to a chromadb database.  This is the cre
 standard and works out of the box without any real config.  Exploring options would 
 be interesting.
 
+This example doesn't take any input and the Agent/Task are hard-coded in the 
+stdout_crew/app_crew.py file.  The goal, backstory, description and expected
+output are terse and would not be appropriate for most real world applications:
+
+```python
+# define the one and only agent
+insurance_agent = Agent(
+    role="Senior Insurance Coverage Assistant",
+    goal="Determine whether something is covered or not",
+    backstory="You are an expert insurance agent designed to assist with coverage queries",
+    verbose=True,
+    allow_delegation=False,
+    llm=llm,
+    tools=[rag_tool],
+    max_retry_limit=5,
+)
+
+# define a Task for the Agent
+task1 = Task(
+    description="What is the waiting period for {topic} and how what is the annual benfit limit?",
+    expected_output="A comprehensive response as to the users question",
+    agent=insurance_agent,
+)
+```
+
 ```terminal
   cd sl_client_demo/stdout_crew
   uv run main.py
@@ -44,8 +69,12 @@ app_crew.py file.
 
 ## Simple Single Agent via Server / Client UI
 
-This is the same example as above but split into a primitive web service with
-an accompanying streamlit client UI.
+This is the same example as above but split into a primitive web service to host
+the agent and an accompanying streamlit client UI.  Additionally the Task and 
+Agent accept some input from the user allowing specific areas of their medical 
+insurance policy to be researched in the vector db.  The prompts have also been
+updated slighly to provide tighter answers and limit responses to non-sensical
+questions.  
 
 ### Start the Server
 ```terminal
