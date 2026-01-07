@@ -1,8 +1,8 @@
 # SL_CLIENT_DEMO
 
 ## What is this?
-This is a super-simple set of python scripts that illustrate the creation of a 
-basic Agent, Task and Crew using the crewai Agent framework.  There are two modes 
+A super-simple set of python scripts that illustrate the creation of a basic
+Agent, Task and Crew using the crewai Agent framework.  There are two modes 
 of operation in this demo:
 
 1. Run an agent from the console and look at the trace info to see what is going on
