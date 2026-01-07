@@ -55,7 +55,7 @@ task1 = Task(
     agent=insurance_agent,
 )
 ```
-
+<br></br>
 ```terminal
   cd sl_client_demo/stdout_crew
   uv run main.py
